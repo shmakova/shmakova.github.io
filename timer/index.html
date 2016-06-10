@@ -1,33 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Interval Timer</title>
+    <title>Интервальный таймер</title>
     <meta name="description" content="Interval Timer">
     <meta name="author" content="shmakova">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css?v=1.0">
 </head>
 <body>
-    <h1>Countdown Clock</h1>
-    <div id="clockdiv">
-        <div>
-            <span class="days"></span>
-            <div class="smalltext">Days</div>
-        </div>
-        <div>
-            <span class="hours"></span>
-            <div class="smalltext">Hours</div>
-        </div>
-        <div>
-            <span class="minutes"></span>
-            <div class="smalltext">Minutes</div>
-        </div>
-        <div>
-            <span class="seconds"></span>
-            <div class="smalltext">Seconds</div>
+    <h1 class="text-primary text-center">Интервальный таймер</h1>
+    <div class="row">
+        <div id="clock">
+            <div class="bg-info">
+                <span class="minutes bg-primary">00</span>
+                <div class="smalltext text-primary">Минут</div>
+            </div>
+            <div class="bg-info">
+                <span class="seconds bg-primary">00</span>
+                <div class="smalltext text-primary">Секунд</div>
+            </div>
         </div>
     </div>
+    <div class="row">
+        <div class="center-block">
+            <button id="start" class="btn btn-primary">Старт</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <table class="table table-striped">
+                <tr class="interval-row">
+                    <td class="interval-number">1.</td>
+                    <td>
+                        <input type="number" min="00" max="59" value="00">
+                        <span> : </span>
+                        <input type="number" min="00" max="59" value="00" step="5">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><p class="text-right"><button id="add" class="btn">Добавить</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Задайте интервал</h4>
+            </div>
+            <div class="modal-content">
+                
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audio" src="http://www.soundjay.com/button/beep-01a.mp3" autostart="false" ></audio>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="js/timer.js"></script>
 </body>
 </html>
